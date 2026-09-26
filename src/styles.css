@@ -261,3 +261,10 @@ section[id]{scroll-margin-top:112px}
 
 /* Keep the floating caption within the scene at desktop widths. */
 .avatar-status{right:12%;min-width:0;width:230px;max-width:80%}
+
+/* Softer lighting keeps the portrait close to the natural reference. */
+.avatar-light{opacity:.2}
+.avatar-stage img{filter:drop-shadow(0 24px 48px rgba(0,0,0,.45))}
+.avatar-stage:hover img,.avatar-stage:focus-within img{filter:drop-shadow(0 26px 52px rgba(0,0,0,.48));transform:translateZ(60px) scale(1.015)}
+.avatar-halo{border-color:rgba(var(--avatar-accent),.12);box-shadow:0 20px 110px rgba(var(--avatar-accent),.08),inset 0 0 90px rgba(var(--avatar-accent),.04)}
+@media(max-width:1050px),(pointer:coarse),(prefers-reduced-motion:reduce){.avatar-stage img,.avatar-stage:hover img,.avatar-stage:focus-within img{transform:none}}

@@ -54,8 +54,8 @@ function App() {
     avatarFrameRef.current = requestAnimationFrame(() => {
       const horizontal = (clientX - rect.left) / rect.width - 0.5;
       const vertical = (clientY - rect.top) / rect.height - 0.5;
-      stage.style.setProperty("--avatar-rx", `${vertical * -7}deg`);
-      stage.style.setProperty("--avatar-ry", `${horizontal * 10}deg`);
+      stage.style.setProperty("--avatar-rx", `${vertical * -3}deg`);
+      stage.style.setProperty("--avatar-ry", `${horizontal * 4}deg`);
       stage.style.setProperty("--avatar-x", `${50 + horizontal * 32}%`);
       stage.style.setProperty("--avatar-y", `${42 + vertical * 28}%`);
       avatarFrameRef.current = null;
@@ -152,7 +152,7 @@ function App() {
                 ))}
               </div>
               <div className="avatar-light" aria-hidden="true" />
-              <img src={avatar} alt="Avatar 3D de Beatriz Moraes em traje profissional" width="928" height="1728" decoding="async" fetchPriority="high" draggable="false" />
+              <img src={avatar} alt="Retrato ilustrado de Beatriz Moraes em traje profissional" width="928" height="1728" decoding="async" fetchPriority="high" draggable="false" />
               <p className="avatar-status" aria-live="polite"><span>{avatarModes[activeAvatarMode].label}</span>{avatarModes[activeAvatarMode].detail}</p>
             </div>
           </div>
