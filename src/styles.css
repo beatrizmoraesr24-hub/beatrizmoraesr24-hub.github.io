@@ -286,6 +286,10 @@ section[id]{scroll-margin-top:112px}
 .project-copy{padding-bottom:36px}
 .timeline-company span{font-size:.875rem}
 .credentials-list strong{line-height:1.5}
+@media(max-width:1050px){
+ .avatar-scene{display:block;min-height:0}
+ .avatar-stage img{position:absolute;inset:0;margin:0 auto;width:auto;height:100%;max-height:100%;max-width:100%;object-fit:contain}
+}
 @media(max-width:640px){
  .availability{font-size:.7rem;letter-spacing:.1em}
  .hero h1{font-size:clamp(2.65rem,12vw,3.6rem)}
