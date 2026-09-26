@@ -1,2 +1,5 @@
-# beatrizmoraesr24-hub.github.io
-Portfolio profissional de Beatriz Moraes
+# Beatriz Moraes
+
+Repositório do portfólio profissional de Beatriz Moraes.
+
+Site em preparação.
