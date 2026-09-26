@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
 import {
   ArrowDownRight, ArrowUpRight, BadgeCheck, ChartNoAxesCombined, Download, Languages, Mail,
-  Menu, Quote, ShieldCheck, Sparkles, X,
+  Menu, ShieldCheck, Sparkles, X,
 } from "lucide-react";
 import avatar from "./assets/beatriz-avatar.png";
 import { certifications, education, experience, projects, stack } from "./portfolioData";
@@ -114,14 +114,14 @@ function App() {
             {Array.from({ length: 24 }).map((_, index) => <i key={index} />)}
           </div>
           <div className="hero-copy">
-            <p className="availability"><span /> Controladoria & Gestão · São Paulo, Brasil</p>
-            <h1>Transformo <span className="rotating-word"><ChartNoAxesCombined /> dados</span> em apoio à decisão.</h1>
+            <p className="availability"><span /> Beatriz Moraes · São Paulo, Brasil</p>
+            <h1>Meu olhar para <span className="rotating-word"><ChartNoAxesCombined /> dados</span> e gestão.</h1>
             <p className="hero-description">
-              Conecto <strong>Controladoria, análise de dados e gestão</strong> para acompanhar resultados, organizar informações e apoiar decisões no dia a dia do negócio.
+              Sou Beatriz, graduanda em Administração e <strong>estagiária de Controladoria no Bradesco</strong>. Trabalho com indicadores, relatórios e organização de informações para apoiar a gestão.
             </p>
             <div className="hero-actions">
               <a className="button light" href="#atuacao">Conhecer minha atuação <ArrowDownRight /></a>
-              <a className="button ghost" href={`${base}curriculo-beatriz-moraes.pdf`} target="_blank" rel="noreferrer">Baixar currículo <Download /></a>
+              <a className="button ghost" href={`${base}curriculo-beatriz-moraes.pdf?v=final`} download="Curriculo-Beatriz-Moraes.pdf">Baixar currículo <Download /></a>
             </div>
             <div className="hero-signals" aria-label="Destaques profissionais">
               <span><b>Atual</b> Banco Bradesco</span><span><b>Formação</b> Administração</span><span><b>Foco</b> Gestão e performance</span>
@@ -165,12 +165,12 @@ function App() {
         </section>
 
         <section className="projects-section" id="atuacao">
-          <SectionTitle description="Frentes de trabalho presentes na minha experiência em Controladoria, gestão administrativa e análise de dados.">Dados, processos e gestão na prática.</SectionTitle>
+          <SectionTitle description="Da organização das informações ao acompanhamento de resultados: estas são as principais frentes da minha atuação.">O que faço no dia a dia.</SectionTitle>
           <div className="projects-grid">
             {projects.map((project) => (
-              <a className={`project-card ${project.accent}`} href={project.href} aria-label={`Conhecer experiência em ${project.title}`} key={project.title}>
+              <a className={`project-card ${project.accent}`} href={project.href} aria-label={`Conhecer minha atuação em ${project.title}`} key={project.title}>
                 <div className="project-visual">
-                  <div className="window-bar"><span /><span /><span /></div>
+                  <div className="window-bar" aria-hidden="true"><span /><span /><span /></div>
                   <div className="project-system"><small>{project.eyebrow}</small><b>{project.title}</b><div className="system-flow">{project.flow.map((step) => <span key={step}>{step}</span>)}</div><span className="project-status">Frente de atuação</span></div>
                 </div>
                 <div className="project-copy"><p>{project.eyebrow}</p><h3>{project.title}</h3><span>{project.description}</span><ul>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul><strong className="project-link">Ver experiência <ArrowUpRight /></strong></div>
@@ -189,6 +189,15 @@ function App() {
           </div>
         </section>
 
+        <section className="experience-section" id="experiencia">
+          <SectionTitle description="Experiência nos setores bancário, hospitalar e administrativo, com foco em informações, indicadores e processos.">Minha trajetória profissional.</SectionTitle>
+          <div className="timeline">
+            {experience.map((item) => (
+              <article key={item.company}><div className="timeline-company"><span>{item.period}</span><strong>{item.company}</strong></div><div className="timeline-detail"><h3>{item.role}</h3><p>{item.summary}</p></div></article>
+            ))}
+          </div>
+        </section>
+
         <section className="education-section" id="formacao">
           <SectionTitle description="Administração, assessoria jurídica e estudos complementares em dados, riscos e compliance.">Formação que conecta gestão e análise.</SectionTitle>
           <div className="education-grid">
@@ -196,25 +205,20 @@ function App() {
             <article className="education-note"><p>Formação complementar</p><h3>Dados, riscos e compliance</h3><strong>FIAP · FGV · B3 · Fundação Bradesco</strong></article>
           </div>
           <div className="credentials-panel">
-            <blockquote>
-              <Quote aria-hidden="true" />
-              <p>Um olhar analítico para organizar informações e apoiar decisões.</p>
-              <cite>Beatriz Moraes · Controladoria, Planejamento e Estratégia</cite>
+            <div className="about-beatriz">
+              <span className="about-kicker">Um pouco sobre mim</span>
+              <h3>Gestão, aprendizado e iniciativa.</h3>
+              <p>Minha trajetória passa pelos setores administrativo, hospitalar e bancário. Hoje, concilio a graduação em Administração com a atuação em Controladoria e os estudos em dados, riscos e compliance.</p>
+              <p>Também atuo como maquiadora profissional, uma experiência de empreendedorismo que faz parte da minha história.</p>
               <a href="https://www.linkedin.com/in/beatriz-moraerod/" target="_blank" rel="noreferrer">Conhecer meu perfil <ArrowUpRight /></a>
-            </blockquote>
+            </div>
             <div className="credentials-list" aria-label="Certificações e idiomas">
-              {certifications.map((item) => <article key={item.title}><BadgeCheck aria-hidden="true" /><div><strong>{item.title}</strong><span>{item.institution}</span></div></article>)}
+              {certifications.slice(0, 4).map((item) => <article key={item.title}><BadgeCheck aria-hidden="true" /><div><strong>{item.title}</strong><span>{item.institution}</span></div></article>)}
+              <details className="more-certifications"><summary>Ver mais cursos e certificações ({certifications.length - 4})</summary>
+                {certifications.slice(4).map((item) => <article key={item.title}><BadgeCheck aria-hidden="true" /><div><strong>{item.title}</strong><span>{item.institution}</span></div></article>)}
+              </details>
               <article><Languages aria-hidden="true" /><div><strong>Idiomas</strong><span>Inglês e espanhol intermediários · Francês básico · CEL</span></div></article>
             </div>
-          </div>
-        </section>
-
-        <section className="experience-section" id="experiencia">
-          <SectionTitle description="Experiência nos setores bancário, hospitalar e administrativo, com foco em informações, indicadores e processos.">Experiência em diferentes contextos de gestão.</SectionTitle>
-          <div className="timeline">
-            {experience.map((item) => (
-              <article key={item.company}><div className="timeline-company"><span>{item.period}</span><strong>{item.company}</strong></div><div className="timeline-detail"><h3>{item.role}</h3><p>{item.summary}</p></div></article>
-            ))}
           </div>
         </section>
 
@@ -224,13 +228,13 @@ function App() {
         </section>
 
         <section className="contact-section" id="contato">
-          <div><h2>Vamos falar sobre <em>dados e gestão?</em></h2><p className="contact-support">Oportunidades em Controladoria, Planejamento e Estratégia começam com uma conversa.</p></div>
+          <div><h2>Vamos <em>conversar?</em></h2><p className="contact-support">Tenho interesse em oportunidades em Controladoria, Planejamento e Estratégia. Entre em contato por e-mail ou pelo LinkedIn.</p></div>
           <a className="contact-cta" href="mailto:beatrizmoraesr24@gmail.com">Iniciar conversa <ArrowUpRight /></a>
         </section>
       </main>
 
       <footer>
-        <p>© 2026 Beatriz Moraes. Gestão, dados e novos caminhos.</p>
+        <p>© 2026 Beatriz Moraes. Controladoria & Gestão.</p>
         <div><a href="https://github.com/beatrizmoraesr24-hub" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/beatriz-moraerod/" target="_blank" rel="noreferrer">LinkedIn</a><a className="footer-mail" href="mailto:beatrizmoraesr24@gmail.com" aria-label="Enviar e-mail para Beatriz Moraes"><Mail /></a></div>
       </footer>
     </div>

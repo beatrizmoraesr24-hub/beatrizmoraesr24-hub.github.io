@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     title: "Controladoria & performance",
     eyebrow: "Setor bancário",
-    description: "Análise e consolidação de informações bancárias, elaboração de relatórios gerenciais e acompanhamento de indicadores para apoiar a gestão no Banco Bradesco.",
+    description: "Consolido informações bancárias, atualizo relatórios gerenciais e acompanho pipelines para apoiar a gestão no Banco Bradesco.",
     stack: ["Controladoria", "Relatórios gerenciais", "Indicadores"],
     flow: ["Informações", "Análise", "Gestão"],
     href: "#experiencia",
@@ -21,7 +21,7 @@ export const projects: Project[] = [
   {
     title: "KPIs & análise de dados",
     eyebrow: "Indicadores de desempenho",
-    description: "Monitoramento de indicadores, metas e resultados, com identificação de desvios e oportunidades de melhoria nos contextos bancário e hospitalar.",
+    description: "Acompanho indicadores, metas e resultados para apoiar a identificação de desvios e oportunidades de melhoria, com experiência nos setores bancário e hospitalar.",
     stack: ["KPIs", "Performance", "Gestão de metas"],
     flow: ["Dados", "Indicadores", "Decisão"],
     href: "#experiencia",
@@ -30,46 +30,30 @@ export const projects: Project[] = [
   {
     title: "Projetos & melhoria contínua",
     eyebrow: "Setor hospitalar",
-    description: "Participação em projetos estratégicos no Hospital Israelita Albert Einstein, incluindo PROADI-SUS, Lean e FHEMIG, com apoio à otimização de processos.",
+    description: "No Hospital Israelita Albert Einstein, participei dos projetos PROADI-SUS, Lean e FHEMIG, com apoio à análise de dados e à melhoria de processos.",
     stack: ["PROADI-SUS", "Lean", "FHEMIG"],
     flow: ["Processos", "Análise", "Melhoria"],
     href: "#experiencia",
     accent: "green",
   },
-  {
-    title: "Relatórios & pipelines",
-    eyebrow: "Suporte à gestão",
-    description: "Atualização de relatórios gerenciais e acompanhamento de pipelines para organizar informações, dar visibilidade ao andamento das atividades e apoiar decisões.",
-    stack: ["Relatórios", "Pipelines", "Organização"],
-    flow: ["Consolidação", "Relatórios", "Gestão"],
-    href: "#experiencia",
-    accent: "blue",
-  },
+
   {
     title: "Compliance & processos",
     eyebrow: "Gestão administrativa",
-    description: "Suporte em compliance e análise documental, organização e controle de processos administrativos e regulatórios na Prefeitura de São Paulo, como jovem aprendiz terceirizada.",
+    description: "Como jovem aprendiz terceirizada na Prefeitura de São Paulo, apoiei a análise documental e a organização de processos administrativos, regulatórios e de compliance.",
     stack: ["Compliance", "Análise documental", "Processos"],
     flow: ["Documentos", "Controle", "Organização"],
     href: "#experiencia",
     accent: "amber",
   },
-  {
-    title: "Empreendedorismo",
-    eyebrow: "Atuação complementar",
-    description: "Atuação complementar como maquiadora profissional, conciliando o empreendedorismo com a formação em Administração e a trajetória em gestão e Controladoria.",
-    stack: ["Empreendedorismo", "Maquiagem profissional", "Administração"],
-    flow: ["Planejamento", "Atendimento", "Serviço"],
-    href: "#contato",
-    accent: "rose",
-  },
+
 ];
 
 export const experience = [
   {
     company: "Banco Bradesco S.A.",
     role: "Estagiária de Controladoria | Gestão e Performance",
-    period: "jun 2025 — atual",
+    period: "jun 2026 — atual",
     summary: "Análise e consolidação de informações bancárias, elaboração e atualização de relatórios gerenciais, monitoramento de indicadores, metas e resultados. Acompanhamento de pipelines para dar suporte à gestão e identificar oportunidades de melhoria.",
   },
   {
